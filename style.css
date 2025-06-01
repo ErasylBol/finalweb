@@ -1,0 +1,55 @@
+:root {
+  --bg-light: #f8f9fa;
+  --text-light: #212529;
+  --bg-dark: #121212;
+  --text-dark: #e4e6eb;
+  --primary: #4a00e0;
+  --accent: #8e2de2;
+  --card-radius: 1rem;
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+body.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.navbar {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.card {
+  border-radius: var(--card-radius);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-outline-light {
+  border-radius: 50px;
+  transition: var(--transition);
+}
+
+footer {
+  background: #000;
+}
+
+.article-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
+}
