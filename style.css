@@ -53,3 +53,9 @@ footer {
   border-top-left-radius: var(--card-radius);
   border-top-right-radius: var(--card-radius);
 }
+@media (min-width: 992px) {
+  #sidebar {
+    position: sticky;
+    top: 100px;
+  }
+}
