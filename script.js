@@ -50,15 +50,19 @@ function addArticleClickListeners() {
       const id = card.getAttribute('data-id');
       const article = articles.find(a => a.id == id);
       if (article) {
+        article.views += 1;
+        const viewsText = card.querySelector('.text-muted.small');
+        const minutes = Math.ceil(article.wordCount / 200);
+        viewsText.textContent = Views: ${article.views} | ${minutes} min read;
         document.getElementById('articleModalLabel').textContent = article.title;
         document.getElementById('articleModalContent').textContent = article.content;
         const modal = new bootstrap.Modal(document.getElementById('articleModal'));
         modal.show();
+        showMostPopular();
       }
     });
   });
 }
-
 function sortArticles() {
   const sortBy = document.getElementById('sort-select').value;
   articles.sort((a, b) => sortBy === 'views' ? b.views - a.views : new Date(b.date) - new Date(a.date));
